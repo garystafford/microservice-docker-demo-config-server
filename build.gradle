@@ -8,8 +8,18 @@ buildscript {
     }
 }
 
-apply plugin: 'spring-boot'
+apply plugin: 'java'
+apply plugin: 'eclipse'
 apply plugin: 'idea'
+apply plugin: 'spring-boot'
+
+jar {
+    baseName = 'config-server'
+    version = '0.0.1-SNAPSHOT'
+}
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 
 ext {
     name = 'Config Server'
