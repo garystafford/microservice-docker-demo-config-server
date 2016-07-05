@@ -1,6 +1,4 @@
 spring:
-  application:
-    name: config-service
   cloud:
     config:
       server:
@@ -9,5 +7,3 @@ spring:
 
 server:
   port: 8888
-
-# spring.cloud.config.server.git.uri=https://github.com/garystafford/spring-cloud-demo-config-repo
