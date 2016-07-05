@@ -3,7 +3,8 @@ spring:
     config:
       server:
         git:
-          uri: file:${HOME}/Documents/projects/widget-docker-demo/config-server-repo
+          uri: https://github.com/garystafford/microservice-docker-demo-config-repo.git
+          # uri: file:${HOME}/Documents/projects/widget-docker-demo/config-server-repo
 
 server:
   port: 8888
