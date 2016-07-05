@@ -3,7 +3,7 @@ spring:
     config:
       server:
         git:
-          uri: file:${HOME}/Documents/projects/spring-cloud-demo-config-repo
+          uri: file:${HOME}/Documents/projects/widget-docker-demo/config-server-repo
 
 server:
   port: 8888
