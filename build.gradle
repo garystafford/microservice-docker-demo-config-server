@@ -8,17 +8,20 @@ buildscript {
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath('se.transmode.gradle:gradle-docker:1.2')
     }
 }
 
+group = 'garystafford' //dockerhub org
+
 apply plugin: 'java'
-apply plugin: 'eclipse'
 apply plugin: 'idea'
 apply plugin: 'spring-boot'
+apply plugin: 'docker'
 
 jar {
     baseName = 'config-server'
-    version = '0.0.1-SNAPSHOT'
+    version = '0.1.0'
 }
 
 sourceCompatibility = 1.8
@@ -27,7 +30,7 @@ targetCompatibility = 1.8
 ext {
     name = 'Config Server'
     description = 'Spring Cloud Config Server'
-    version='0.0.1-SNAPSHOT'
+    version = '0.1.0'
     sourceEncoding='UTF-8'
 }
 
@@ -39,15 +42,26 @@ repositories {
     maven { url "http://repo.spring.io/libs-release-local" }
 }
 
+task buildDocker(type: Docker, dependsOn: build) {
+  push = true
+  applicationName = jar.baseName
+  dockerfile = file('src/main/docker/Dockerfile')
+  doFirst {
+    copy {
+      from jar
+      into stageDir
+    }
+  }
+}
+
 dependencyManagement {
     imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Brixton.BUILD-SNAPSHOT"
+      mavenBom 'org.springframework.cloud:spring-cloud-dependencies:Brixton.SR3'
     }
 }
 
 dependencies {
     compile 'org.springframework.cloud:spring-cloud-config-server'
-
     testCompile 'org.springframework.boot:spring-boot-starter-test'
     testCompile "junit:junit"
 }
