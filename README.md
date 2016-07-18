@@ -32,10 +32,5 @@ Build the Docker Image containing service jar. The profile will be used to run
 ./gradlew clean build buildDocker
 ```
 
-Create and run a Docker container
-```bash
-docker run -e "SPRING_PROFILES_ACTIVE=production" -p 8080:8080 -t garystafford/config-server
-```
-
 #### References
 * https://github.com/Transmode/gradle-docker
