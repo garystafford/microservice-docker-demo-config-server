@@ -1,6 +1,11 @@
 server:
   port: 8888
 
+---
+
+spring:
+    profiles: development
+
 spring:
   cloud:
     config:
@@ -8,3 +13,17 @@ spring:
         git:
           uri: https://github.com/garystafford/microservice-docker-demo-config-repo.git
           # uri: file:${HOME}/Documents/projects/widget-docker-demo/config-server-repo
+
+---
+
+spring:
+    profiles: production
+server:
+    port: 0
+
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/garystafford/microservice-docker-demo-config-repo.git
