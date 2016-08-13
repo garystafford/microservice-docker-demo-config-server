@@ -1,4 +1,5 @@
 FROM frolvlad/alpine-oraclejdk8:slim
+ENV REFRESHED_AT 2016-08-13
 VOLUME /tmp
 ADD config-server-0.1.0.jar app.jar
 RUN sh -c 'touch /app.jar'
