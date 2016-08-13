@@ -17,7 +17,9 @@ One of a set of Java Spring Boot services, for an upcoming post on scaling Sprin
 Build and start service
 ```bash
 ./gradlew clean build && \
-  java -jar build/libs/config-server-0.1.0.jar
+  java -jar -Dspring.profiles.active=development \
+  build/libs/config-server-0.1.0.jar
+
 ```
 
 #### Docker
