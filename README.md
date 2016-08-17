@@ -36,5 +36,11 @@ Build the Docker Image containing service jar. The profile will be used to run
 ./gradlew clean build buildDocker
 ```
 
+If you chose to set `push = false` within the `buildDocker` method,
+then use the following command to push the image to DockerHub
+```bash
+docker push garystafford/config-server:latest
+```
+
 #### References
 * https://github.com/Transmode/gradle-docker
