@@ -7,7 +7,7 @@
 # Spring Cloud Netflix Eureka Server
 
 #### Introduction
-One of a set of Java Spring Boot services, for an upcoming post on scaling Spring Boot microservices with the latest Spring and Docker features.
+Spring Cloud Config Server, for an upcoming post on scaling microservices with the latest Spring and Docker features.
 
 #### Technologies
 * Java
