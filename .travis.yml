@@ -5,8 +5,8 @@ before_install:
 before_deploy:
 - chmod ugo+x deploy.sh
 script:
-- bash ./gradlew clean build
-- bash ./deploy.sh
+- ./gradlew clean build
+- sh ./deploy.sh
 env:
   global:
   - GH_REF: github.com/garystafford/microservice-docker-demo-config-server.git
